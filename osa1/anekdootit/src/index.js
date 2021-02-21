@@ -20,15 +20,12 @@ const App = ({anecdotes}) => {
   const [votes, addVote] = useState(new Array(anecdotes.length).fill(0)) // Zero filled array
 
   const showNext = () => {
-    
     let randomItemIndex = Math.floor(Math.random() * anecdotes.length) // Generate random index
-    
     if (randomItemIndex === selected){ // Prevent getting same anecdote twice
       while (randomItemIndex === selected) {
         randomItemIndex = Math.floor(Math.random() * anecdotes.length)
       } 
-    }
-    
+    } 
     setSelected(randomItemIndex) // Set newly randomized index to selected
   };
 
